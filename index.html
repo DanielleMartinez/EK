@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="node_modules/pdfmake/build/pdfmake.min.js"></script>
+    <script src="node_modules/pdfmake/build/vfs_fonts.js"></script>
+    <script>
+    // playground requires you to assign document definition to a variable called dd
+
+var dd = {
+	content: [
+		{
+			text:[
+			    'ENCHANTED KINGDOM\n',
+			    'San Lorenzo South, Sta. Rosa, Laguna\n',
+			    'Vat Registered TIN: 000-000-000-000\n',
+			    'MIN: XXXXXXXXXX\t',
+			    'SN: XXXXXXXXXX\n',
+			    '\n',
+			    'FOR EVALUATION PURPOSES ONLY\n',
+			    '\n',
+			    '=====================================',
+			    ],
+			alignment: 'center'
+		},
+		{//
+			text: ['01/19/2019  01:43 PM\t',
+			       'OR#: 000-00000157\n',
+			       'POS1     Tintin Reyes\t\t',
+			       'Tran#: 0000000221',
+			       '\n\n',
+			       {text: '*** CUSTOMER COPY ***', alignment:'center'},
+				   '\n\n',
+				   'n',
+				],
+			
+		}
+	],
+};
+pdfMake.createPdf(dd).open();
+    </script>
+</body>
+</html>
